@@ -13,8 +13,29 @@ const FriendCard = ({
 	borderColor,
 	position,
 }) => {
-	let borderPosition = `border-${position}-2`;
-	let borderPColor = `border-${position}-${borderColor}`;
+	const getBorderStyle = () => {
+		switch (position) {
+			case "t":
+				return {
+					borderTopColor: `${borderColor}`,
+				};
+			case "b":
+				return {
+					borderBottomColor: `${borderColor}`,
+				};
+			case "l":
+				return {
+					borderLeftColor: `${borderColor}`,
+				};
+			case "r":
+				return {
+					borderRightColor: `${borderColor}`,
+				};
+			default:
+				break;
+		}
+	};
+	const borderStyles = getBorderStyle();
 	return (
 		<div
 			className={`rounded-md space-y-3  ${
@@ -23,7 +44,8 @@ const FriendCard = ({
 			<div className="flex justify-between items-center">
 				<div className="flex space-x-2">
 					<div
-						className={`p-1 border-2 border-bodyColor/25 ${borderPosition} !important ${borderPColor} !important rounded-full`}>
+						className={`p-1 border-2 border-bodyColor/25 border-${position}-2 rounded-full `}
+						style={{ ...borderStyles }}>
 						<img
 							src={img}
 							className="w-10 rounded-full p-0.5 border-textWhite border friend-avatar"
