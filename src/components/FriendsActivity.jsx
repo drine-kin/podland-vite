@@ -49,15 +49,15 @@ const FriendsActivity = () => {
 					activityName="The hacking UI podcast"
 				/>
 			</div>
-			<div className="mt-2">
+			<div className="mt-2 ">
 				<div className="flex justify-between items-center mb-4">
 					<h2 className="text-textWhite text-base inline-block  align-middle">
 						Your activity statistics
 					</h2>
 					<VscKebabVertical className="text-textWhite text-lg" />
 				</div>
-				<div className="flex pb-2">
-					<div className="flex flex-col space-x-1">
+				<div className="flex pb-2 ">
+					<div className="flex flex-col w-17 ">
 						<h2 className="text-xs text-thirdSpringGreen  inline-block  align-middle">
 							<div className="w-2 h-2 inline-block mr-1  border-thirdSpringGreen bg-thirdSpringGreen rounded-full "></div>
 							Today
@@ -76,11 +76,11 @@ const FriendsActivity = () => {
 						99%
 					</h2>
 				</div>
-				<div className="flex py-2">
-					<div className="flex flex-col">
+				<div className="flex py-2 ">
+					<div className="flex flex-col  w-17 ">
 						<h2 className="text-xs text-fourthMakeup  inline-block  align-middle">
 							<div className="w-2 h-2 inline-block mr-1  border-fourthMakeup bg-fourthMakeup rounded-full "></div>
-							Yesterday
+							Friday
 						</h2>
 						<h2 className="text-xs text-textWhite  inline-block  align-middle">
 							<strong>132</strong> min
