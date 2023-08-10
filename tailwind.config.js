@@ -28,7 +28,25 @@ module.exports = {
 			"5xl": "3rem", // 5 times extra large
 			"6xl": "4rem", // 6 times extra large.
 		},
+		// screens: {
+		// 	sm: "640px",
+		// 	// => @media (min-width: 640px) { ... }
 
+		// 	md: "768px",
+		// 	// => @media (min-width: 768px) { ... }
+
+		// 	ml: "992px",
+		// 	// => @media (min-width: 992px) { ... }
+
+		// 	lg: "1024px",
+		// 	// => @media (min-width: 1024px) { ... }
+
+		// 	xl: "1280px",
+		// 	// => @media (min-width: 1280px) { ... }
+
+		// 	"2xl": "1536px",
+		// 	// => @media (min-width: 1536px) { ... }
+		// },
 		extend: {},
 	},
 	plugins: [],
