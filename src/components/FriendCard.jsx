@@ -39,7 +39,7 @@ const FriendCard = ({
 	return (
 		<div
 			className={`rounded-md space-y-3  ${
-				first && "ml-2 my-5 -mr-10 p-3 bg-navBg"
+				first && "ml-2 my-5 md:-mr-10 p-3 bg-navBg"
 			}`}>
 			<div className="flex justify-between items-center">
 				<div className="flex space-x-2">

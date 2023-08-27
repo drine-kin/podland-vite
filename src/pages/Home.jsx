@@ -5,13 +5,13 @@ import MainContent from "../components/MainContent";
 import FriendsActivity from "../components/FriendsActivity";
 
 const Home = () => {
-  return (
-    <Wrapper>
-      <Navbar />
-      <MainContent />
-      <FriendsActivity />
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<Navbar />
+			<MainContent />
+			<FriendsActivity />
+		</Wrapper>
+	);
 };
 
 export default Home;

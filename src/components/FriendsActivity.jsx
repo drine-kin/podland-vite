@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const FriendsActivity = () => {
 	return (
-		<section className="lg:col-span-3 p-5 bg-friendActivityBg rounded-tr-lg rounded-br-lg ">
+		<section className="lg:col-span-3 pb-24 p-5 lg:pb-0 lg:mb-0 bg-friendActivityBg rounded-tr-lg rounded-br-lg ">
 			<div className="mt-4">
 				<div className="flex justify-between items-center mb-4">
 					<h2 className="text-textWhite text-base inline-block  align-middle">

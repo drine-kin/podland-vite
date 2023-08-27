@@ -18,13 +18,14 @@ const Navbar = () => {
 	return (
 		<header
 			className={`rounded-none lg:max-w-full lg:col-span-2 lg:flex lg:flex-col justify-between bg-secondaryOrange lg:bg-navBg lg:rounded-tl-lg lg:rounded-bl-lg lg:py-4 ${
-				showMenu && "py-6 h-screen relative grid grid-cols-1 content-around"
+				showMenu &&
+				"py-6 h-screen relative grid grid-cols-1 content-around z-50"
 			}`}
 			onClick={() => {
 				showMenu && setShowMenu(false);
 			}}>
 			<div
-				className={`m-auto bg-blue-500 flex flex-col space ${
+				className={` flex  flex-col items-stretch customxl:m-auto ${
 					showMenu && "gap-10 "
 				}`}>
 				<div
@@ -164,13 +165,15 @@ const Navbar = () => {
 					</NavLink>
 				</nav>
 
-				<div className="rounded-lg grow hidden lg:flex justify-center items-center -ml-5 w-44 h-38 max-h-56 bg-primaryBlack my-2">
+				<div className="rounded-lg grow hidden lg:flex justify-center items-center -ml-8 w-44 h-38 max-h-56 bg-primaryBlack my-2 p-3">
 					<div className="flex flex-col space-y-1 px-6">
 						<img src={DoneImg} className="m-auto w-8" alt="complete status" />
 						<div className="text-center">
 							<h3 className="text-textWhite text-base">
-								Your listening <br />
-								is <span className="text-fourthMakeup">complete</span> today
+								Your listening
+								<br />
+								is &nbsp;
+								<span className="text-fourthMakeup">complete</span> today
 							</h3>
 						</div>
 						<h3 className="text-textWhite text-center text-sm">
@@ -186,7 +189,7 @@ const Navbar = () => {
 				<div
 					className={`${
 						showMenu ? "flex px-8 " : "hidden px-10"
-					} lg:flex grow-0 justify-start lg:justify-center items-center  lg:p-0`}>
+					} lg:flex lg:self-stretch grow-0 justify-start lg:justify-center items-center  lg:p-0`}>
 					<img src={UserImg} className="w-10 rounded-full" alt="User profile" />
 					<div className="flex flex-col px-3">
 						<h2 className="text-textWhite  inline-block  align-middle">

@@ -1,122 +1,127 @@
-.App {
-    text-align: center;
-  }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #b7b0b0;
-    /* border-radius: 5px; */
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #262426;
-  }
-  
-  .active-border-bottom:before {
-    content: "";
-    position: absolute;
-    left: 30%;
-    bottom: 0;
-    width: 50%;
-    border-bottom: 3px solid #fe6238;
-    border-radius: 10px;
-  }
-  
-  main {
-    margin-bottom: 74px;
-  }
-  
-  .rhap_container{
-    background: transparent !important;
-    width: 80% !important;
-    box-shadow: none !important;
-    padding-top: 15px !important;
-    
-  }
-  
-  
-  
-  .rhap_time{
-    color: white !important;
-    font-size: 14px !important;
-  }
-  
-  
-  .rhap_stacked .rhap_controls-section{
-    margin: 0 !important;
-  }
-  
-  .rhap_controls-section{
-    flex: 0 !important;
-  }
-  
-  .rhap_footer {
-    color: #fff !important;
-    text-align: center;
-    margin: 0 !important;
-    font-size: 0.875rem !important;
-    margin-top: -5px !important;
-  }
-  
-  .rhap_play-pause-button{
-    color:#fe6238 !important;
-  }
-  
-  .rhap_progress-section{
-    padding-left: .5rem;
-  }
-  
-  /* .friend-avatar::before {
-    content: '';
-    position: absolute;
-    background-color: #fe6238;
-    width: 30%;
-    height: 30px;
-    top: 0;
-    left: 0;
-  }  */
+/* .App {
+	text-align: center;
+}
+
+.App-logo {
+	height: 40vmin;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
+
+.App-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+} */
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #b7b0b0;
+	/* border-radius: 5px; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #262426;
+}
+
+.active-border-bottom:before {
+	content: "";
+	position: absolute;
+	left: 30%;
+	bottom: 0;
+	width: 50%;
+	border-bottom: 3px solid #fe6238;
+	border-radius: 10px;
+}
+
+main {
+	margin-bottom: 74px;
+}
+
+.rhap_container {
+	background: transparent !important;
+	width: 80% !important;
+	box-shadow: none !important;
+	padding-top: 15px !important;
+}
+
+.rhap_time {
+	color: white !important;
+	font-size: 14px !important;
+}
+
+.rhap_stacked .rhap_controls-section {
+	margin: 0 !important;
+}
+
+.rhap_controls-section {
+	flex: 0 !important;
+}
+
+.rhap_footer {
+	color: #fff !important;
+	text-align: center;
+	margin: 0 !important;
+	font-size: 0.875rem !important;
+	margin-top: -5px !important;
+}
+
+.rhap_play-pause-button {
+	color: #fe6238 !important;
+}
+
+.rhap_progress-section {
+	padding-left: 0.5rem;
+}
+
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+	display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+/* .react-horizontal-scrolling-menu--item[data-key="1"] {
+	padding-right: 25px;
+} */
+
+@media screen and (max-width: 640px) {
+	.react-horizontal-scrolling-menu--scroll-container {
+		padding: 0.2rem;
+	}
+}

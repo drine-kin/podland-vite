@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
 	content: ["./src/**/*.{js,jsx,ts,tsx}"],
 	theme: {
@@ -27,6 +29,11 @@ module.exports = {
 			"4xl": "2.25rem", // 4 times extra large
 			"5xl": "3rem", // 5 times extra large
 			"6xl": "4rem", // 6 times extra large.
+		},
+		screens: {
+			...defaultTheme.screens,
+			xs: "440px",
+			customxl: "1536px",
 		},
 		// screens: {
 		// 	sm: "640px",
