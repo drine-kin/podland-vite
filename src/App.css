@@ -37,6 +37,10 @@
 	}
 } */
 
+html {
+	background: #121213;
+}
+
 ::-webkit-scrollbar {
 	width: 5px;
 }

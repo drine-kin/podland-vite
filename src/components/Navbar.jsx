@@ -25,7 +25,7 @@ const Navbar = () => {
 				showMenu && setShowMenu(false);
 			}}>
 			<div
-				className={` flex  flex-col items-stretch customxl:m-auto ${
+				className={`m-auto md:m-0 flex  flex-col items-stretch customxl:m-auto ${
 					showMenu && "gap-10 "
 				}`}>
 				<div
