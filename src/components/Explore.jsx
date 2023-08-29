@@ -1,6 +1,6 @@
 import React from "react";
-import UIUXImg from "../img/uiux tips.png";
-import IconDesignImg from "../img/icon design tips.png";
+import UIUXImg from "../assets/img/uiux tips.png";
+import IconDesignImg from "../assets/img/icon design tips.png";
 import PodcastCard from "./PodcastCard";
 import { ScrollMenu } from "react-horizontal-scrolling-menu";
 import "react-horizontal-scrolling-menu/dist/styles.css";

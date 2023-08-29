@@ -75,40 +75,53 @@ main {
 	margin-bottom: 74px;
 }
 
-.rhap_container {
-	background: transparent !important;
-	width: 80% !important;
-	box-shadow: none !important;
-	padding-top: 15px !important;
+#waveform {
+	cursor: pointer;
+	position: relative;
+}
+#hover {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	pointer-events: none;
+	height: 100%;
+	width: 0;
+	mix-blend-mode: overlay;
+	background: rgba(255, 255, 255, 0.5);
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+#waveform:hover #hover {
+	opacity: 1;
+}
+#time,
+#duration {
+	position: absolute;
+	z-index: 11;
+	top: 50%;
+	margin-top: -1px;
+	transform: translateY(-50%);
+	font-size: 11px;
+	background: rgba(0, 0, 0, 0.75);
+	padding: 2px;
+	color: #ddd;
+}
+#time {
+	left: 0;
+}
+#duration {
+	right: 0;
 }
 
-.rhap_time {
-	color: white !important;
-	font-size: 14px !important;
+.playing {
+	display: grid;
+	grid-template-columns: 60px 1fr;
+	align-items: center;
 }
 
-.rhap_stacked .rhap_controls-section {
-	margin: 0 !important;
-}
-
-.rhap_controls-section {
-	flex: 0 !important;
-}
-
-.rhap_footer {
-	color: #fff !important;
-	text-align: center;
-	margin: 0 !important;
-	font-size: 0.875rem !important;
-	margin-top: -5px !important;
-}
-
-.rhap_play-pause-button {
-	color: #fe6238 !important;
-}
-
-.rhap_progress-section {
-	padding-left: 0.5rem;
+.canvases {
+	max-height: 40px !important;
 }
 
 .react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {

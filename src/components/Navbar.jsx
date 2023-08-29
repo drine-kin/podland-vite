@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import PodlandLogo from "../img/headphone.svg";
-import UserImg from "../img/drine kin photo.jpg";
-import DoneImg from "../img/check.png";
+import PodlandLogo from "../assets/img/headphone.svg";
+import UserImg from "../assets/img/drine kin photo.jpg";
+import DoneImg from "../assets/img/check.png";
 
 import { RiCompassDiscoverFill } from "react-icons/ri";
 import { AiOutlineShoppingCart } from "react-icons/ai";

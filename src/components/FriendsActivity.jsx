@@ -3,10 +3,11 @@ import { GoPersonAdd } from "react-icons/go";
 import { VscKebabVertical } from "react-icons/vsc";
 import { BiChevronDown } from "react-icons/bi";
 import FriendCard from "./FriendCard";
-import FriendImg1 from "../img/avatar 1.jpeg";
-import FriendImg2 from "../img/avatar 2.jpeg";
-import FriendImg3 from "../img/avatar 3.jpeg";
-import FriendImg4 from "../img/avatar 4.jpeg";
+import FriendImg1 from "../assets/img/avatar 1.jpeg";
+import FriendImg2 from "../assets/img/avatar 2.jpeg";
+import FriendImg3 from "../assets/img/avatar 3.jpeg";
+import FriendImg4 from "../assets/img/avatar 4.jpeg";
+
 import { Link } from "react-router-dom";
 
 const FriendsActivity = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import PlayImg from "../img/play btn.png";
+import PlayImg from "../assets/img/play btn.png";
 
 // border: 2px solid green;
 //     border-top-width: 3px;
