@@ -39,52 +39,51 @@ progressGradient.addColorStop(
 
 progressGradient.addColorStop(1, "#F6B094"); // Bottom color
 
-const Waveform = ({ audio }) => {
+const formWaveSurferOptions = (containerRef) => ({
+	container: containerRef,
+	waveColor: gradient,
+	height: 30,
+	progressColor: progressGradient,
+	barWidth: 2,
+});
+
+const Waveform = ({ audio, title, category }) => {
 	const song = window.location.origin + audio;
-	const containerRef = useRef();
 
-	const waveSurferRef = useRef({
-		isPlaying: () => false,
-	});
-
-	const [isPlaying, toggleIsPlaying] = useState(false);
+	const waveformRef = useRef(null);
+	const wavesurfer = useRef(null);
+	const [playing, setPlaying] = useState(false);
 
 	useEffect(() => {
-		const waveSurfer = WaveSurfer.create({
-			container: containerRef.current,
-			waveColor: gradient,
-			height: 25,
-			progressColor: progressGradient,
-			barWidth: 2,
-		});
-		waveSurfer.load(song);
+		setPlaying(false);
 
-		console.log(containerRef && containerRef.current);
+		const options = formWaveSurferOptions(waveformRef.current);
+		wavesurfer.current = WaveSurfer.create(options);
 
-		waveSurfer.on("ready", () => {
-			waveSurferRef.current = waveSurfer;
-		});
+		wavesurfer.current.load(song);
 
-		return () => {
-			waveSurfer.destroy();
-		};
+		return () => wavesurfer.current.destroy();
 	}, [song]);
 
+	const handlePlayPause = () => {
+		setPlaying(!playing);
+		wavesurfer.current.playPause();
+	};
+
 	return (
-		<div className="playing">
-			<button
-				onClick={() => {
-					waveSurferRef.current.playPause();
-					toggleIsPlaying(waveSurferRef.current.isPlaying());
-				}}
-				type="button">
-				{isPlaying ? (
-					<FaPauseCircle size="2.5em" className="text-textWhite" />
+		<div className="flex space-x-3">
+			<button onClick={handlePlayPause} type="button">
+				{playing ? (
+					<FaPauseCircle size="2.5em" className="text-secondaryOrange" />
 				) : (
-					<FaPlayCircle size="2.5em" className="text-textWhite" />
+					<FaPlayCircle size="2.5em" className="text-secondaryOrange" />
 				)}
 			</button>
-			<div ref={containerRef} />
+			<div>
+				<p className="text-bodyColor text-sm w-max">{title}</p>
+				<p className="text-bodyColor text-sm">{category}</p>
+			</div>
+			<div id="waveform" ref={waveformRef} className="w-5/6" />
 		</div>
 	);
 };
