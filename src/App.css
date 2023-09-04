@@ -94,27 +94,35 @@ main {
 	scrollbar-width: none; /* Firefox */
 }
 
-.marquee {
-	position: relative;
-	width: 100vw;
-	max-width: 100%;
-	height: 206px;
-	overflow-x: hidden;
-}
-
-.track {
-	position: absolute;
+.marqueeStyle {
+	/* display: inline-block; */
 	white-space: nowrap;
+	-webkit-animation: scrolling-left1 7s linear infinite;
+	animation: scrolling-left1 7s linear infinite;
 }
 
-.track > h1 {
-	margin: 20px 0;
-	font-size: 8rem;
-	font-family: Antonio;
-	-webkit-text-fill-color: rgba(255, 255, 255, 0);
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: #f4955c;
-	text-transform: uppercase;
+.current-info:hover .marqueeStyle {
+	animation-play-state: paused;
+}
+
+@keyframes scrolling-left1 {
+	0% {
+		transform: translateX(100%);
+		-webkit-transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+		-webkit-transform: translateX(-100%);
+	}
+}
+
+@-webkit-keyframes scrolling-left1 {
+	0% {
+		-webkit-transform: translateX(100%);
+	}
+	100% {
+		-webkit-transform: translateX(-100%);
+	}
 }
 
 @media screen and (max-width: 640px) {

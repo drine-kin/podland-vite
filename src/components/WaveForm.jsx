@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { FaPlayCircle, FaPauseCircle } from "react-icons/fa";
 import WaveSurfer from "wavesurfer.js";
+import TitleAnimation from "./TitleAnimation";
 
 const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
@@ -47,12 +48,21 @@ const formWaveSurferOptions = (containerRef) => ({
 	barWidth: 2,
 });
 
+const formatTime = (seconds) => {
+	const minutes = Math.floor(seconds / 60);
+	const secondsRemainder = Math.round(seconds) % 60;
+	const paddedSeconds = `0${secondsRemainder}`.slice(-2);
+	return `${minutes}:${paddedSeconds}`;
+};
+
 const Waveform = ({ audio, title, category }) => {
 	const song = window.location.origin + audio;
 
 	const waveformRef = useRef(null);
 	const wavesurfer = useRef(null);
 	const [playing, setPlaying] = useState(false);
+	const [duration, setDuration] = useState("0:00");
+	const [currentTime, setCurrentTime] = useState("0:00");
 
 	useEffect(() => {
 		setPlaying(false);
@@ -60,9 +70,18 @@ const Waveform = ({ audio, title, category }) => {
 		const options = formWaveSurferOptions(waveformRef.current);
 		wavesurfer.current = WaveSurfer.create(options);
 
-		wavesurfer.current.load(song);
+		wavesurfer.current
+			.load(song)
+			.then(() => setDuration(formatTime(wavesurfer.current.getDuration())));
 
-		return () => wavesurfer.current.destroy();
+		wavesurfer.current.on("audioprocess", () => {
+			setCurrentTime(formatTime(wavesurfer.current.getCurrentTime()));
+		});
+
+		return () => {
+			wavesurfer.current.un("audioprocess");
+			wavesurfer.current.destroy();
+		};
 	}, [song]);
 
 	const handlePlayPause = () => {
@@ -70,8 +89,10 @@ const Waveform = ({ audio, title, category }) => {
 		wavesurfer.current.playPause();
 	};
 
+	//console.log(wavesurfer.current && wavesurfer.current.getScroll());
+
 	return (
-		<div className="flex space-x-3">
+		<div className="flex justify-around space-x-4">
 			<button onClick={handlePlayPause} type="button">
 				{playing ? (
 					<FaPauseCircle size="2.5em" className="text-secondaryOrange" />
@@ -79,11 +100,14 @@ const Waveform = ({ audio, title, category }) => {
 					<FaPlayCircle size="2.5em" className="text-secondaryOrange" />
 				)}
 			</button>
-			<div>
-				<p className="text-bodyColor text-sm w-max">{title}</p>
+			<div className="current-info ">
+				<TitleAnimation songTitle={title} />
 				<p className="text-bodyColor text-sm">{category}</p>
 			</div>
-			<div id="waveform" ref={waveformRef} className="w-5/6" />
+			<div id="waveform" ref={waveformRef} className="w-full">
+				<div id="time">{currentTime}</div>
+				<div id="duration">{duration}</div>
+			</div>
 		</div>
 	);
 };
