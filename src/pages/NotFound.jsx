@@ -9,7 +9,7 @@ const NotFound = () => {
 			{/* <div className="flex justify-center items-center col-span-10  bg-friendActivityBg">
 				<h3 className="text-lg text-bodyColor">Coming Soon...</h3>
 			</div> */}
-			<main className="col-span-12 lg:col-span-7 lg:flex lg:flex-col justify-between bg-mainContentColor p-5 pb-0 mb-0 lg:overflow-y-auto relative">
+			<main className="col-span-12 lg:col-span-7 lg:flex lg:flex-col lg:justify-between bg-mainContentColor p-5 pb-0 mb-0 lg:overflow-y-auto relative">
 				<div className="flex justify-center items-center max-h-screen">
 					<h3 className="text-lg text-bodyColor">Coming Soon...</h3>
 				</div>
