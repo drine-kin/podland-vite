@@ -9,8 +9,8 @@ const Wrapper = ({ children }) => {
 			className={`bg-mainContentColor lg:bg-bodyBg overflow-x-hidden ${
 				showMenu && "overflow-y-hidden"
 			}`}>
-			<div className="container 2xl:container mx-auto h-screen max-h-screen ">
-				<div className="lg:grid lg:grid-cols-12 grid-flow-row h-screen rounded-xl lg:px-10 lg:py-8">
+			<div className="container 2xl:container mx-auto h-screen max-h-screen flex flex-col justify-center">
+				<div className="lg:grid lg:grid-cols-12 grid-flow-row max-h-screen rounded-xl lg:px-10 lg:py-8">
 					<MenuContext.Provider value={{ showMenu, setShowMenu }}>
 						{children}
 					</MenuContext.Provider>
