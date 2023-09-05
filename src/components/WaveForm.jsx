@@ -89,10 +89,8 @@ const Waveform = ({ audio, title, category }) => {
 		wavesurfer.current.playPause();
 	};
 
-	//console.log(wavesurfer.current && wavesurfer.current.getScroll());
-
 	return (
-		<div className="flex justify-around space-x-4">
+		<div className="flex justify-around items-center space-x-2 lg:space-x-4">
 			<button onClick={handlePlayPause} type="button">
 				{playing ? (
 					<FaPauseCircle size="2.5em" className="text-secondaryOrange" />
@@ -100,13 +98,15 @@ const Waveform = ({ audio, title, category }) => {
 					<FaPlayCircle size="2.5em" className="text-secondaryOrange" />
 				)}
 			</button>
-			<div className="current-info ">
+			<div className="current-info max-w-[20%]">
 				<TitleAnimation songTitle={title} />
 				<p className="text-bodyColor text-sm">{category}</p>
 			</div>
-			<div id="waveform" ref={waveformRef} className="w-full">
-				<div id="time">{currentTime}</div>
-				<div id="duration">{duration}</div>
+			<div id="waveform" ref={waveformRef} className="w-full" />
+			<div className="flex items-center text-bodyColor text-xs">
+				<div className="pr-0.5 md:pr-1 text-textWhite">{currentTime} </div>
+				<span>/</span>
+				<div className="pl-0.5 md:pl-1">{duration}</div>
 			</div>
 		</div>
 	);
