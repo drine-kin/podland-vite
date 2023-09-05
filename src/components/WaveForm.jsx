@@ -21,8 +21,8 @@ const progressGradient = ctx.createLinearGradient(
 	0,
 	canvas.height * 1.35
 );
-progressGradient.addColorStop(0, "#EE772F"); // Top color
-progressGradient.addColorStop((canvas.height * 0.7) / canvas.height, "#EB4926"); // Top color
+progressGradient.addColorStop(0, "#fe6238"); // Top color
+progressGradient.addColorStop((canvas.height * 0.7) / canvas.height, "#fe6238"); // Top color
 progressGradient.addColorStop(
 	(canvas.height * 0.7 + 1) / canvas.height,
 	"#ffffff"
